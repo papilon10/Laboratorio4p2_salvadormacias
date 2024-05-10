@@ -143,10 +143,28 @@ public class Laboratorio4p2_salvadormacias {
                         }
                         break;
                         case 5: {
+                            System.out.println("---eliminar tareas---");
+                            for (int i = 0; i < lista.size(); i++) {
+                                System.out.println(
+                                        lista.indexOf(lista.get(i)) + "-"
+                                        + lista.get(i)
+                                );
+                            }
+                            System.out.println("Ingrese el indice de la tarea a eliminar: ");
+                            int index = lea.nextInt();
+                            lista.remove(index);
+                            System.out.println("la tarea fue eliminada exitosamente...");
 
                         }
                         break;
                         case 6: {
+                            System.out.println("---listar tareas---");
+                            for (int i = 0; i < lista.size(); i++) {
+                                System.out.println(
+                                        lista.indexOf(lista.get(i)) + "-"
+                                        + lista.get(i)
+                                );
+                            }
 
                         }
                         break;
