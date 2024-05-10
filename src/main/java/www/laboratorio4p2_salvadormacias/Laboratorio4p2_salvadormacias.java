@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  *
@@ -241,11 +242,13 @@ public class Laboratorio4p2_salvadormacias {
                         switch (opc_empleado) {
                             case 1: {
                                 System.out.println("---informacion personal---");
-                                System.out.println(default3.getNombre()+default3.getApellido());
+                                System.out.println(default3.getNombre() + default3.getApellido());
 
                             }
                             break;
                             case 2: {
+                                System.out.println("---realizar tarea---");
+                                tarea_random((HashMap<String, Double>) empleados_map, lista);
 
                             }
                             case 3: {
@@ -292,4 +295,31 @@ public class Laboratorio4p2_salvadormacias {
         }
     }
 
+    private static void tarea_random(HashMap<String, Double> empleados_map, ArrayList lista) {
+        Random random = new Random();
+
+        if (!lista.isEmpty()) {
+            int indice = random.nextInt(lista.size());
+            tarea tarea_Random = (tarea) lista.get(indice);
+
+            for (Map.Entry<String, Double> entry : empleados_map.entrySet()) {
+                entry.setValue(entry.getValue() + tarea_Random.getPago());
+            }
+
+            lista.remove(indice);
+
+            System.out.println("tarea realizada: ");
+
+            System.out.println("nombre: " + tarea_Random.getNombre());
+            System.out.println("descripcion: " + tarea_Random.getDescripcion());
+            System.out.println("tiempo en minutos: " + tarea_Random.getTiempo());
+            System.out.println("tarea re: " + tarea_Random.getPago());
+            System.out.println("\n tarea realizada exitosamente...");
+
+        } else {
+            System.out.println("No hay tareas disponibles....");
+        }
+    }
+
 }//fin clase
+
