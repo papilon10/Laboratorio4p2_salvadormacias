@@ -240,7 +240,8 @@ public class Laboratorio4p2_salvadormacias {
                         int opc_empleado = lea.nextInt();
                         switch (opc_empleado) {
                             case 1: {
-                                System.out.println("");
+                                System.out.println("---informacion personal---");
+                                System.out.println(default3.getNombre()+default3.getApellido());
 
                             }
                             break;
