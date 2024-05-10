@@ -63,7 +63,7 @@ public class Laboratorio4p2_salvadormacias {
                                 String contrasena_admin = str.nextLine();
                                 System.out.println("Ingrese los anos de experiencia: ");
                                 int experiencia = lea.nextInt();
-                                lista.add(new admin(experiencia, nombre, apellido, username, contrasena_admin));
+                                lista_usuarios.add(new admin(experiencia, nombre, apellido, username, contrasena_admin));
                                 System.out.println("administrador creado exitosamente....");
 
                             } else if (op_crearUsuario == 2) {
@@ -77,7 +77,7 @@ public class Laboratorio4p2_salvadormacias {
                                 String contrasena_gerente = str.nextLine();
                                 System.out.println("Ingrese la carrera cursada: ");
                                 String carrera = str.nextLine();
-                                lista.add(new gerente(carrera, nombre, apellido, username, contrasena));
+                                lista_usuarios.add(new gerente(carrera, nombre, apellido, username, contrasena));
                                 System.out.println("gerente creado exitosamente.....");
 
                             } else if (op_crearUsuario == 3) {
@@ -89,12 +89,12 @@ public class Laboratorio4p2_salvadormacias {
                                 String username = str.nextLine();
                                 System.out.println("Ingrese la contrasena: ");
                                 String contrasena_empleado = str.nextLine();
-                                Double dinero=0.0;
+                                Double dinero = 0.0;
                                 System.out.println("Ingrese el dinero actual: ");
                                 dinero = lea.nextDouble();
-                                lista.add(new empleado(dinero, nombre, apellido, username, contrasena));
+                                lista_usuarios.add(new empleado(dinero, nombre, apellido, username, contrasena));
                                 System.out.println("empleado creado exitosamente....");
-                                
+
                             } else {
                                 System.out.println("opcion ingresada es invalida...");
                             }
@@ -102,6 +102,17 @@ public class Laboratorio4p2_salvadormacias {
                         }
                         break;
                         case 2: {
+                            System.out.println("---eliminar usuario---");
+                            for (int i = 0; i < lista_usuarios.size(); i++) {
+                                System.out.println(
+                                        lista_usuarios.indexOf(lista_usuarios.get(i)) + "-"
+                                        + lista_usuarios.get(i)
+                                );
+                            }
+                            System.out.println("Ingrese el indice del usuario a eliminar: ");
+                            int index = lea.nextInt();
+                            lista_usuarios.remove(index);
+                            System.out.println("el usuario fue eliminado exitosamente...");
 
                         }
                         break;
