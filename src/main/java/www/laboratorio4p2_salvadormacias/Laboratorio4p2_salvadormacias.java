@@ -117,10 +117,28 @@ public class Laboratorio4p2_salvadormacias {
                         }
                         break;
                         case 3: {
+                            System.out.println("---listar usuarios---");
+                            for (int i = 0; i < lista_usuarios.size(); i++) {
+                                System.out.println(
+                                        lista_usuarios.indexOf(lista_usuarios.get(i)) + "-"
+                                        + lista_usuarios.get(i)
+                                );
+                            }
 
                         }
                         break;
                         case 4: {
+                            System.out.println("---crear tarea---");
+                            System.out.println("Ingrese el nombre: ");
+                            String nombre = str.nextLine();
+                            System.out.println("Ingrese la descripcion: ");
+                            String descripcion = str.nextLine();
+                            System.out.println("Ingrese el tiempo en minutos: ");
+                            int tiempo = lea.nextInt();
+                            System.out.println("Ingrese el pago: ");
+                            double pago = lea.nextDouble();
+                            lista.add(new tarea(nombre, descripcion, tiempo, pago));
+                            System.out.println("tarea creada exitosamente....");
 
                         }
                         break;
