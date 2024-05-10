@@ -30,7 +30,7 @@ public class empleado extends usuario{
 
     @Override
     public String toString() {
-        return super.toString()+ "empleado{" + "dinero_actual=" + dinero_actual + '}';
+        return super.getNombre()+ "empleado{" + "dinero_actual=" + dinero_actual + '}';
     }
     
     
